@@ -19,6 +19,6 @@ spec:
         name: webapp 
         env:
         - name: COLOR
-          value: "blue"
+          value: "yellow"
         ports:
         - containerPort: 8080
