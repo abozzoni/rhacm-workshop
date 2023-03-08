@@ -1,14 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: webapp
+  name: webserver
+  labels:
+    app: webserver
 spec:
+  selector:
+    matchLabels:
+      app: webserver
   replicas: 1
   template:
+    metadata:
+      labels:
+        app: webserver
     spec:
       containers:
       - image: quay.io/redhatworkshops/bgd:latest
-#      - image: registry.redhat.io/rhel8/httpd-24
         name: webapp 
         env:
         - name: COLOR
